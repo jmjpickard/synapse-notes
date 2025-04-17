@@ -15,7 +15,8 @@ export default defineConfig({
         vite: {
           build: {
             rollupOptions: {
-              external: ["@prisma/client"],
+              // Add 'ws' to externals so Vite doesn't try to bundle it or its native deps
+              external: ["@prisma/client", "ws"],
             },
           },
         },
